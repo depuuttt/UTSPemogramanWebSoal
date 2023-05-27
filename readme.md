@@ -16,16 +16,16 @@ Demo : https://depuuttt.github.io/UTSPemogramanWebSoal/
 
 ## Changelogs
 
-**27/05/2023 14:33**
+**27/05/2023 v0.0.1**
 
 - Brand new landing page
 - Smooth scroll now available
 
-**27/05/2023 15:22**
+**27/05/2023 v0.0.2**
 
 - AJAX call for confirmation message
 
-**27/05/2023 17:47**
+**27/05/2023 v0.0.3**
 
 - AJAX removed from this project
 - Project font changed (Arial, Helvetica, sans-serif -> 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif)
@@ -41,3 +41,9 @@ Demo : https://depuuttt.github.io/UTSPemogramanWebSoal/
 - More animation on contact forms
 - Removed message confirmation sections
 - Launched Github Pages
+
+**27/05/2023 v0.0.4**
+
+- Add learn more modal in each services point
+- Add iframe in each services modal also include quick overview
+- CSS Tweak for services modal
