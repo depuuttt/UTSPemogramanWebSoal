@@ -1,0 +1,224 @@
+/* Reset styles */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: #f1f1f1;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.hero-text {
+  margin-top: 50px;
+  color: white;
+  padding: 10vw;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  margin: 20px 0;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(31, 48, 81, 0.5);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.cta-button:hover {
+  transition: all 0.3s ease-in;
+  background: rgba(31, 48, 81, 1);
+}
+
+/* About section */
+.about {
+  display: flex;
+  align-items: center;
+  padding: 80px 40px;
+}
+
+.about-text {
+  flex: 1;
+  padding-right: 40px;
+  text-align: justify;
+}
+
+.about-text h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Services section */
+.services {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.services h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.service-icon {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Contact section */
+.contact {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.contact h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.contact form input,
+.contact form textarea {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #132444;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder,
+.contact form input:placeholder-shown,
+.contact form textarea:placeholder-shown {
+  transition: all 0.3s ease-in;
+  color: transparent;
+}
+
+.contact form button {
+  display: inline-block;
+  padding: 20px 40px;
+  background: #132444;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2),
+    -4px -4px 8px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.contact form button:hover {
+  transition: all 0.5s ease-out;
+  background: #315476;
+}
+
+/* Email Confirmation */
+.confirmation {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.confirmation h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.confirmation p {
+  margin: 20px 0px;
+}
+
+.confirmation input,
+.confirmation textarea {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background: #132444;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin-bottom: 0;
+}
