@@ -1,6 +1,5 @@
 # UTS Pemograman Web sesuai Soal
-
-**PT. Inovasi Techindo Nusantara Landing Page**
+# PT. Inovasi Techindo Nusantara Landing Page
 
 Ini adalah proyek landing page untuk PT. Inovasi Techindo Nusantara. Halaman ini dibangun menggunakan HTML, CSS, dan JavaScript untuk memberikan informasi tentang perusahaan dan layanan yang ditawarkan.
 
