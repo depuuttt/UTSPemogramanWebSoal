@@ -21,3 +21,7 @@ Demo : https://depuuttt.github.io/UTSPemogramanWebSoal/
 
 - Brand new landing page
 - Smooth scroll now available
+
+**27/05/2023 15:22**
+
+- AJAX call for confirmation message

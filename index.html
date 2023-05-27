@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <title>PT. Inovasi Techindo Nusantara</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/smoothscroll.js"></script>
   </head>
   <body>
     <header>
@@ -105,29 +107,13 @@
         <input type="text" placeholder="Name" />
         <input type="email" placeholder="Email" />
         <textarea placeholder="Message"></textarea>
-        <button type="submit">Send Message</button>
+        <button onclick="loadHTML()">Send Message</button>
       </form>
     </section>
-    <section class="confirmation">
-      <h2>Message Confirmation</h2>
-      <p>Are you sure want to send this message?</p>
-      <div class="confirmation-text">
-        <div class="name">
-          <input type="text" disabled placeholder="Name Here" />
-        </div>
-        <div class="name">
-          <input type="email" disabled placeholder="email Here" />
-        </div>
-        <div class="name">
-          <textarea placeholder="whahahahwhawhahawh" disabled></textarea>
-        </div>
-      </div>
-    </section>
+    <section class="confirmation" id="confirmation"></section>
     <footer>
       <p>&copy; 2023 PT. Inovasi Techindo Nusantara. All rights reserved.</p>
     </footer>
-    <script src="js/script.js"></script>
-    <script src="js/smoothscroll.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
