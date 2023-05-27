@@ -5,7 +5,7 @@ Ini adalah proyek landing page untuk PT. Inovasi Techindo Nusantara. Halaman ini
 
 ## Overview
 
-Demo :
+Demo : https://depuuttt.github.io/UTSPemogramanWebSoal/
 
 ## Feature
 
