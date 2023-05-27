@@ -1,13 +1,27 @@
-const xhr = new XMLHttpRequest();
-const container = document.getElementById("confirmation");
+document.addEventListener("DOMContentLoaded", function () {
+  var modal = document.getElementById("modal");
 
-xhr.onload = function () {
-  if (this.status === 200) {
-    container.innerHTML = xhr.responseText;
-  } else {
-    console.warn("FUCK YOU!");
+  function showModal() {
+    modal.style.display = "block";
+    modal.classList.add("fade-in");
   }
-};
 
-xhr.open("GET", "../view/confirmationMessage/index.html");
-xhr.send();
+  function hideModal() {
+    modal.classList.add("fade-out");
+    setTimeout(function () {
+      modal.style.display = "none";
+      modal.classList.remove("fade-in", "fade-out");
+    }, 500);
+  }
+
+  setTimeout(showModal, 600);
+
+  var closeBtn = document.getElementsByClassName("close")[0];
+  closeBtn.addEventListener("click", hideModal);
+
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      hideModal();
+    }
+  });
+});

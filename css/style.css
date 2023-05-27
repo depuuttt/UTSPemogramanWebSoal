@@ -11,7 +11,7 @@ html {
 
 /* Global styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
 }
@@ -132,6 +132,15 @@ header {
   margin-bottom: 20px;
 }
 
+.service-icon img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.service-icon img:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
 .service-card h3 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -148,6 +157,24 @@ header {
   margin-bottom: 40px;
 }
 
+.contact-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.contact-group .contact-point {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.contact-group .contact-point ion-icon,
+.contact-group .contact-point p {
+  margin: 0 5px;
+}
+
 .contact form input,
 .contact form textarea {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -155,9 +182,16 @@ header {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #132444;
+  border: 2px solid #132444;
   text-decoration: none;
   border-radius: 5px;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  transition: all 0.3s ease-in;
+  border: 2px solid #132444;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact form input:focus::placeholder,
@@ -186,31 +220,6 @@ header {
   background: #315476;
 }
 
-/* Email Confirmation */
-.confirmation {
-  text-align: center;
-  padding: 80px 40px;
-}
-
-.confirmation h2 {
-  font-size: 30px;
-  margin-bottom: 40px;
-}
-
-.confirmation p {
-  margin: 20px 0px;
-}
-
-.confirmation input,
-.confirmation textarea {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-
 /* Footer */
 footer {
   background: #132444;
@@ -221,4 +230,102 @@ footer {
 
 footer p {
   margin-bottom: 0;
+}
+
+/* Modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #132444;
+  text-align: center;
+}
+
+.modal hr {
+  border: none;
+  border-top: 3px solid #132444;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 100px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: justify;
+}
+
+.modal-content .about-me .profile-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.modal-content .about-me .profile-point {
+  margin: 0 20px;
+}
+
+.modal-content .about-me .profile-point a {
+  color: #132444;
+  transition: all 0.3s ease-in;
+}
+
+.modal-content .about-me .profile-point a:hover {
+  opacity: 0.8;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

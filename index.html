@@ -5,11 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <title>PT. Inovasi Techindo Nusantara</title>
-    <script src="js/jquery-3.7.0.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/smoothscroll.js"></script>
   </head>
   <body>
+    <!-- Modal -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <span class="close"><ion-icon name="close"></ion-icon></span>
+        <div class="opening">
+          <h2>Welcome to my Midterm Exam project!</h2>
+          <hr />
+          <p>
+            I am pleased to present this project which is the result of my hard
+            work and dedication in developing skills in HTML, CSS and
+            JavaScript. This project is also a testament to my success in
+            completing the Midterm Exams. Through a deep understanding of
+            programming languages and web design, I have created innovative and
+            attractive solutions. In this project, I have applied concepts
+            learned during my university days, such as using HTML for the basic
+            structure of web pages, CSS for aesthetic appearance and layout, and
+            JavaScript for dynamic interactivity. I hope that this project will
+            reflect my progress and be the first step in my journey as a
+            competent web developer.
+          </p>
+        </div>
+        <div class="about-me">
+          <h2>About Me</h2>
+          <hr />
+          <div class="profile-group">
+            <div class="profile-point">
+              <strong>Nama</strong>
+              <p>Aldi Maulana Iqbal</p>
+            </div>
+            <div class="profile-point">
+              <strong>NIM</strong>
+              <p>20210801222</p>
+            </div>
+            <div class="profile-point">
+              <strong>Jurusan</strong>
+              <p>Teknik Informatika</p>
+            </div>
+          </div>
+          <div class="profile-group">
+            <div class="profile-point">
+              <a href="https://github.com/depuuttt" target="_blank"
+                ><ion-icon name="logo-github" size="large"></ion-icon
+              ></a>
+            </div>
+            <div class="profile-point">
+              <a
+                href="https://www.linkedin.com/in/aldi-maulana-98058b158"
+                target="_blank"
+                ><ion-icon name="logo-linkedin" size="large"></ion-icon
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header -->
     <header>
       <nav>
         <div class="logo">
@@ -30,6 +83,7 @@
         <a class="cta-button" href="#about-us">Get Started</a>
       </div>
     </header>
+    <!-- About Us -->
     <section class="about" id="about-us">
       <div class="about-text">
         <h2>About Us</h2>
@@ -55,6 +109,7 @@
         </p>
       </div>
     </section>
+    <!-- Services -->
     <section class="services" id="services">
       <h2>Our Services</h2>
       <div class="service-card">
@@ -101,19 +156,41 @@
         </p>
       </div>
     </section>
+    <!-- Contact Us -->
     <section class="contact" id="contacts">
       <h2>Contact Us</h2>
-      <form>
+      <div class="contact-group">
+        <div class="contact-point">
+          <ion-icon name="mail"></ion-icon>
+          <p>inovasinusantara@techindo.com</p>
+        </div>
+        <div class="contact-point">
+          <ion-icon name="call"></ion-icon>
+          <p>(021) 626 6664</p>
+        </div>
+      </div>
+      <div class="contact-group">
+        <div class="contact-point">
+          <ion-icon name="location"></ion-icon>
+          <p>
+            PT. Inovasi Techindo Nusantara, Jl. Raya Narogong No. 123, Bekasi
+            Utara, Kota Bekasi, Jawa Barat, 17123, Indonesia
+          </p>
+        </div>
+      </div>
+      <form name="messageForm" id="messageForm" method="post">
         <input type="text" placeholder="Name" />
         <input type="email" placeholder="Email" />
         <textarea placeholder="Message"></textarea>
-        <button onclick="loadHTML()">Send Message</button>
+        <button type="submit" name="submit" id="submit">Send Message</button>
       </form>
     </section>
-    <section class="confirmation" id="confirmation"></section>
     <footer>
       <p>&copy; 2023 PT. Inovasi Techindo Nusantara. All rights reserved.</p>
     </footer>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/script.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
