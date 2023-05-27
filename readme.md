@@ -1,6 +1,6 @@
 # PT. Inovasi Techindo Nusantara Landing Page
 
-Ini adalah proyek landing page untuk PT. Inovasi Techindo Nusantara. Halaman ini dibangun menggunakan HTML, CSS, dan JavaScript untuk memberikan informasi tentang perusahaan dan layanan yang ditawarkan.
+This is a landing page project for PT. Techindo Nusantara Innovation. This page is built using HTML, CSS, and JavaScript to provide information about the company and the services it offers.
 
 ## Overview
 
@@ -8,11 +8,11 @@ Demo : https://depuuttt.github.io/UTSPemogramanWebSoal/
 
 ## Feature
 
-- Navigasi yang responsif untuk mengakses bagian halaman dengan mudah
-- Bagian "Tentang Kami" untuk memberikan informasi singkat tentang perusahaan
-- Bagian "Layanan" untuk menjelaskan layanan yang ditawarkan oleh perusahaan
-- Formulir kontak untuk menghubungi perusahaan
-- Footer dengan informasi hak cipta
+- Responsive navigation to easily access sections of the page
+- "About Us" section to provide brief information about the company
+- The "Services" section describes the services offered by the company
+- Contact form to contact the company
+- Footer with copyright information
 
 ## Changelogs
 
