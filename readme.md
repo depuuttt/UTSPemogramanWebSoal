@@ -47,3 +47,7 @@ Demo : https://depuuttt.github.io/UTSPemogramanWebSoal/
 - Add learn more modal in each services point
 - Add iframe in each services modal also include quick overview
 - CSS Tweak for services modal
+
+**29/05/2023 v0.0.4a**
+
+- Title Favicon
