@@ -1,315 +1,881 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>PT. Inovasi Techindo Nusantara</title>
+    <link
+      rel="shortcut icon"
+      href="img/icon.png"
+      type="image/x-icon"
+    />
+    <title>PT. Inovasi Techindo Nusantara - Ditingkatkan</title>
+
+    <style>
+      /* Reset dan Gaya Global */
+      :root {
+        --primary-color: #132444;
+        --secondary-color: #315476;
+        --light-gray: #f1f1f1;
+        --dark-text: #333;
+        --light-text: #fff;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark-text);
+        background-color: var(--light-text);
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--primary-color);
+      }
+
+      /* Header dan Navigasi */
+      header {
+        background: var(--light-gray);
+        padding: 20px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--primary-color);
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--dark-text);
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .nav-links a:hover {
+        background-color: var(--primary-color);
+        color: var(--light-text);
+      }
+
+      .menu-toggle {
+        display: none; /* Sembunyikan di desktop */
+        font-size: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--primary-color);
+      }
+
+      /* Hero Section */
+      .hero-text {
+        color: var(--light-text);
+        padding: 10vw 5vw;
+        background-image: url("img/background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 20px;
+        color: var(--light-text);
+      }
+
+      .cta-button {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        color: var(--light-text);
+        text-decoration: none;
+        border-radius: 10px;
+        border: 1px solid var(--light-text);
+        transition: background-color 0.3s;
+      }
+
+      .cta-button:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+
+      /* Sections */
+      section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      section h2 {
+        text-align: center;
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 40px;
+      }
+
+      .about-text {
+        text-align: justify;
+        line-height: 1.8;
+      }
+
+      /* Services Section */
+      .services {
+        background-color: #f9f9f9;
+      }
+
+      .services-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        background: var(--light-text);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .service-card a {
+        margin-top: auto;
+        padding-top: 15px;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: bold;
+      }
+
+      .service-icon img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        object-fit: contain;
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      /* Contact Section */
+      .contact-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+      }
+
+      .contact-group .contact-point {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .contact form {
+        max-width: 600px;
+        margin: 40px auto 0;
+      }
+
+      .contact form input,
+      .contact form textarea {
+        font-family: inherit;
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: all 0.3s ease-in;
+      }
+
+      .contact form input:focus,
+      .contact form textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 5px rgba(19, 36, 68, 0.2);
+      }
+
+      .contact form button {
+        display: inline-block;
+        padding: 12px 25px;
+        background: var(--primary-color);
+        color: var(--light-text);
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      .contact form button:hover {
+        background: var(--secondary-color);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-color);
+        color: var(--light-text);
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      /* Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        animation: fadeIn 0.3s;
+      }
+
+      .modal.is-closing {
+        animation: fadeOut 0.3s forwards;
+      }
+
+      .modal.is-visible {
+        display: block;
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 30px;
+        border: none;
+        width: 90%;
+        max-width: 800px;
+        text-align: justify;
+        border-radius: 10px;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .modal-content .yt-vids iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 8px;
+        border: none;
+      }
+
+      .modal-content .yt-desc {
+        margin-top: 20px;
+      }
+
+      .close-modal {
+        color: #aaa;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .close-modal:hover,
+      .close-modal:focus {
+        color: black;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      /* === CSS untuk Overhaul Modal Selamat Datang === */
+
+      /* Layout utama modal baru */
+      .modal-content.overhaul {
+        display: flex;
+        padding: 0;
+        width: 90%;
+        max-width: 750px;
+        overflow: hidden; /* Mencegah konten keluar dari border-radius */
+        text-align: left;
+      }
+
+      /* Kolom Kiri (Visual) */
+      .modal-visual {
+        background-color: var(--primary-color);
+        color: var(--light-text);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 40%;
+      }
+
+      .modal-visual ion-icon {
+        font-size: 80px;
+        margin-bottom: 15px;
+      }
+
+      .modal-visual h3 {
+        color: var(--light-text);
+      }
+
+      /* Kolom Kanan (Konten) */
+      .modal-body {
+        padding: 40px;
+        width: 60%;
+        position: relative;
+      }
+
+      .modal-body .subtitle {
+        margin-bottom: 25px;
+        color: #666;
+      }
+
+      /* Kartu Profil yang Baru */
+      .profile-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 30px;
+      }
+
+      .profile-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .profile-info strong {
+        font-size: 1rem;
+        color: var(--dark-text);
+      }
+
+      .profile-info span {
+        font-size: 0.85rem;
+        color: #555;
+      }
+
+      .profile-links a {
+        color: var(--primary-color);
+        font-size: 24px;
+        margin-left: 15px;
+        transition: opacity 0.3s;
+      }
+
+      .profile-links a:hover {
+        opacity: 0.7;
+      }
+
+      /* Tombol Aksi Baru */
+      .modal-cta {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        background-color: var(--primary-color);
+        color: var(--light-text);
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .modal-cta:hover {
+        background-color: var(--secondary-color);
+      }
+
+      /* Desain Responsif */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: var(--light-gray);
+          padding: 20px 0;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.is-active {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .about {
+          padding: 40px 20px;
+        }
+
+        .modal-content {
+          margin: 5% auto;
+          width: 95%;
+          padding: 20px;
+        }
+
+        /* Responsivitas untuk Modal Baru */
+        .modal-content.overhaul {
+          flex-direction: column;
+        }
+
+        .modal-visual,
+        .modal-body {
+          width: 100%;
+        }
+
+        .modal-visual {
+          padding: 30px;
+        }
+
+        .modal-body {
+          padding: 30px 25px;
+        }
+
+        .profile-card {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- Modal -->
-    <div class="modal" id="modal">
-      <div class="modal-content">
-        <span class="close"><ion-icon name="close"></ion-icon></span>
-        <div class="opening">
-          <h2>Welcome to my Midterm Exam project!</h2>
-          <hr />
-          <p>
-            I am pleased to present this project which is the result of my hard
-            work and dedication in developing skills in HTML, CSS and
-            JavaScript. This project is also a testament to my success in
-            completing the Midterm Exams. Through a deep understanding of
-            programming languages and web design, I have created innovative and
-            attractive solutions. In this project, I have applied concepts
-            learned during my university days, such as using HTML for the basic
-            structure of web pages, CSS for aesthetic appearance and layout, and
-            JavaScript for dynamic interactivity. I hope that this project will
-            reflect my progress and be the first step in my journey as a
-            competent web developer.
-          </p>
+    <!-- Modal Selamat Datang yang Telah Diperbarui -->
+    <div
+      class="modal"
+      id="welcome-modal"
+      role="dialog"
+      aria-labelledby="welcome-title"
+    >
+      <div class="modal-content overhaul">
+        <!-- Kolom Kiri: Visual -->
+        <div class="modal-visual">
+          <ion-icon name="laptop-outline"></ion-icon>
+          <h3>Project Ujian Tengah Semester</h3>
         </div>
-        <div class="about-me">
-          <h2>About Me</h2>
-          <hr />
-          <div class="profile-group">
-            <div class="profile-point">
-              <strong>Nama</strong>
-              <p>Aldi Maulana Iqbal</p>
+
+        <!-- Kolom Kanan: Konten -->
+        <div class="modal-body">
+          <button class="close-modal" aria-label="Tutup">
+            <ion-icon name="close"></ion-icon>
+          </button>
+          <h2 id="welcome-title">Selamat Datang!</h2>
+          <p class="subtitle">
+            Proyek ini adalah demonstrasi keahlian dalam HTML, CSS, dan
+            JavaScript.
+          </p>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <strong>Aldi Maulana Iqbal</strong>
+              <span>20210801222 - Teknik Informatika</span>
             </div>
-            <div class="profile-point">
-              <strong>NIM</strong>
-              <p>20210801222</p>
-            </div>
-            <div class="profile-point">
-              <strong>Jurusan</strong>
-              <p>Teknik Informatika</p>
-            </div>
-          </div>
-          <div class="profile-group">
-            <div class="profile-point">
-              <a href="https://github.com/depuuttt" target="_blank"
-                ><ion-icon name="logo-github" size="large"></ion-icon
+            <div class="profile-links">
+              <a
+                href="https://github.com/depuuttt"
+                target="_blank"
+                aria-label="GitHub Profile"
+                ><ion-icon name="logo-github"></ion-icon
               ></a>
-            </div>
-            <div class="profile-point">
               <a
                 href="https://www.linkedin.com/in/aldi-maulana-98058b158"
                 target="_blank"
-                ><ion-icon name="logo-linkedin" size="large"></ion-icon
+                aria-label="LinkedIn Profile"
+                ><ion-icon name="logo-linkedin"></ion-icon
               ></a>
             </div>
           </div>
+
+          <button class="cta-button modal-cta" id="close-welcome-modal">
+            Mulai Jelajahi
+          </button>
         </div>
       </div>
     </div>
+
     <!-- Header -->
     <header>
       <nav>
-        <div class="logo">
-          <a href="#"
-            ><img src="img/logo.png" alt="PT. Inovasi Techindo Nusantara logo"
-          /></a>
-          <p>PT. Inovasi Techindo Nusantara</p>
-        </div>
+        <a href="#" class="logo">
+          <img
+            src="img/logo.png"
+            alt="Logo PT. Inovasi Techindo Nusantara"
+          />
+          <span>PT. Inovasi Techindo</span>
+        </a>
         <ul class="nav-links">
           <li><a href="#about-us">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contacts">Contact</a></li>
         </ul>
+        <button class="menu-toggle" aria-label="Buka Menu">
+          <ion-icon name="menu"></ion-icon>
+        </button>
       </nav>
-      <div class="hero-text">
+    </header>
+
+    <!-- Konten Utama -->
+    <main>
+      <section class="hero-text">
         <h1>Welcome to PT. Inovasi Techindo Nusantara</h1>
         <p>We provide innovative solutions for your technological needs.</p>
         <a class="cta-button" href="#about-us">Get Started</a>
-      </div>
-    </header>
-    <!-- About Us -->
-    <section class="about" id="about-us">
-      <div class="about-text">
+      </section>
+
+      <section id="about-us">
         <h2>About Us</h2>
-        <p>
-          At PT. Inovasi Techindo Nusantara, we are a dynamic and
-          forward-thinking technology company dedicated to providing innovative
-          solutions to businesses across Indonesia. With a passion for
-          technology and a commitment to excellence, we strive to empower our
-          clients by delivering cutting-edge products and services tailored to
-          their unique needs. Our team of highly skilled professionals brings
-          together expertise from various disciplines, including software
-          development, data analytics, artificial intelligence, and
-          cybersecurity. We believe in the power of collaboration and constantly
-          push the boundaries of what is possible to create impactful solutions
-          that drive business growth and efficiency. As a trusted partner, we
-          understand the challenges faced by businesses in today's rapidly
-          evolving digital landscape. That's why we work closely with our
-          clients to gain a deep understanding of their goals, processes, and
-          pain points. By leveraging our technical expertise and industry
-          insights, we develop custom solutions that address their specific
-          requirements, helping them stay ahead of the competition and achieve
-          sustainable success.
-        </p>
-      </div>
-    </section>
-    <!-- Services -->
-    <section class="services" id="services">
-      <h2>Our Services</h2>
-      <div class="service-card">
-        <div class="service-icon">
-          <img src="img/services1.png" alt="Service 1" />
-        </div>
-        <h3>Web Development</h3>
-        <p>
-          Our skilled web developers combine creativity, functionality, and user
-          experience to create stunning websites tailored to your business
-          needs. Whether you require a simple informational website or a complex
-          e-commerce platform, we employ the latest technologies and best
-          practices to deliver robust and scalable web solutions.
-        </p>
-        <a href="#" id="openModalWeb">Learn More...</a>
-        <div class="modal" id="modalWeb">
-          <div class="modal-content">
-            <span class="close closeWeb"
-              ><ion-icon name="close"></ion-icon
-            ></span>
-            <div class="opening">
-              <h2>Web Development</h2>
-              <hr />
-              <div class="yt-vids">
-                <iframe
-                  src="https://www.youtube.com/embed/xGmIl7QbBiA"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="yt-desc">
-                <h2>Quick Overview</h2>
-                <hr />
-                <p>
-                  Web development is the process of creating and maintaining
-                  websites and web applications. It involves a combination of
-                  programming languages, frameworks, and tools to build the
-                  front-end (user interface) and back-end (server-side logic)
-                  components of a website. Front-end development focuses on
-                  HTML, CSS, and JavaScript to design and implement the visual
-                  elements and interactivity of a site, while back-end
-                  development handles server-side programming using languages
-                  like Python, Ruby, PHP, or JavaScript (Node.js) to handle data
-                  storage, business logic, and integration with databases and
-                  external APIs. Web development also encompasses tasks such as
-                  testing, optimization, and deployment to ensure the website or
-                  application runs smoothly across different devices and
-                  browsers.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <img src="img/services2.png" alt="Service 2" />
-        </div>
-        <h3>Mobile App Development</h3>
-        <p>
-          In a world dominated by smartphones, having a mobile app for your
-          business is essential to reach and engage with your target audience
-          effectively. Our mobile app development team excels in building native
-          and cross-platform apps that deliver seamless experiences across
-          various devices. From concept to deployment, we guide you through the
-          entire app development lifecycle to ensure your app stands out in the
-          app stores.
-        </p>
-        <a href="#" id="openModalMobile">Learn More...</a>
-        <div class="modal" id="modalMobile">
-          <div class="modal-content">
-            <span class="close closeMobile"
-              ><ion-icon name="close"></ion-icon
-            ></span>
-            <div class="opening">
-              <h2>Mobile App Development</h2>
-              <hr />
-              <div class="yt-vids">
-                <iframe
-                  src="https://www.youtube.com/embed/WvwwL0TwH6U"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="yt-desc">
-                <h2>Quick Overview</h2>
-                <hr />
-                <p>
-                  Mobile app development is the process of creating software
-                  applications for mobile devices such as smartphones and
-                  tablets. It involves several stages, including ideation,
-                  design, development, testing, and deployment. Developers use
-                  programming languages and frameworks like Java, Swift, or
-                  React Native to build apps for specific operating systems such
-                  as iOS or Android. Key considerations in app development
-                  include user experience (UX) design, functionality,
-                  performance optimization, and security. Additionally, app
-                  development may involve integrating features like push
-                  notifications, in-app purchases, or social media sharing. Once
-                  the app is developed, it goes through rigorous testing to
-                  ensure its stability and usability. Finally, the app is
-                  published to respective app stores, and developers often
-                  provide updates and maintenance to improve the app over time.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <img src="img/services3.png" alt="Service 3" />
-        </div>
-        <h3>IT Consulting</h3>
-        <p>
-          Technology plays a vital role in driving business growth and
-          efficiency. Our experienced IT consultants are here to provide
-          strategic guidance and practical solutions to optimize your IT
-          infrastructure, streamline processes, and enhance overall performance.
-          We assess your unique business requirements, recommend the most
-          suitable technologies, and help you make informed decisions to achieve
-          your long-term objectives.
-        </p>
-        <a href="#" id="openModalConsul">Learn More...</a>
-        <div class="modal" id="modalConsul">
-          <div class="modal-content">
-            <span class="close closeConsul"
-              ><ion-icon name="close"></ion-icon
-            ></span>
-            <div class="opening">
-              <h2>IT Consulting</h2>
-              <hr />
-              <div class="yt-vids">
-                <iframe
-                  src="https://www.youtube.com/embed/gTdDH6T5kaE"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="yt-desc">
-                <h2>Quick Overview</h2>
-                <hr />
-                <p>
-                  IT consulting refers to the practice of providing expert
-                  advice and assistance to organizations in utilizing
-                  information technology to achieve their business objectives.
-                  IT consultants analyze the client's existing IT
-                  infrastructure, identify areas for improvement, and propose
-                  strategies to enhance efficiency, productivity, and security.
-                  They offer guidance on technology solutions, system
-                  integration, software implementation, and digital
-                  transformation initiatives, tailoring recommendations to meet
-                  the specific needs and goals of each client. IT consulting
-                  also involves evaluating risks, managing projects, and
-                  providing ongoing support and maintenance, ensuring that
-                  businesses effectively leverage technology to gain a
-                  competitive edge in today's digital landscape.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Contact Us -->
-    <section class="contact" id="contacts">
-      <h2>Contact Us</h2>
-      <div class="contact-group">
-        <div class="contact-point">
-          <ion-icon name="mail"></ion-icon>
-          <p>inovasinusantara@techindo.com</p>
-        </div>
-        <div class="contact-point">
-          <ion-icon name="call"></ion-icon>
-          <p>(021) 626 6664</p>
-        </div>
-      </div>
-      <div class="contact-group">
-        <div class="contact-point">
-          <ion-icon name="location"></ion-icon>
+        <div class="about-text">
           <p>
-            PT. Inovasi Techindo Nusantara, Jl. Raya Narogong No. 123, Bekasi
-            Utara, Kota Bekasi, Jawa Barat, 17123, Indonesia
+            At PT. Inovasi Techindo Nusantara, we are a dynamic and
+            forward-thinking technology company dedicated to providing
+            innovative solutions to businesses across Indonesia. With a passion
+            for technology and a commitment to excellence, we strive to empower
+            our clients by delivering cutting-edge products and services
+            tailored to their unique needs...
+          </p>
+        </div>
+      </section>
+
+      <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+          <div class="service-card">
+            <div class="service-icon">
+              <img
+                src="img/services1.png"
+                alt="Ikon Web Development"
+              />
+            </div>
+            <h3>Web Development</h3>
+            <p>
+              Creating stunning and functional websites tailored for your
+              business needs.
+            </p>
+            <a href="#" data-modal-target="modalWeb">Learn More...</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <img
+                src="img/services2.png"
+                alt="Ikon Mobile App"
+              />
+            </div>
+            <h3>Mobile App Development</h3>
+            <p>
+              Building seamless native and cross-platform apps to engage your
+              audience.
+            </p>
+            <a href="#" data-modal-target="modalMobile">Learn More...</a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <img
+                src="img/services3.png"
+                alt="Ikon IT Consulting"
+              />
+            </div>
+            <h3>IT Consulting</h3>
+            <p>
+              Providing strategic guidance to optimize your IT infrastructure
+              and performance.
+            </p>
+            <a href="#" data-modal-target="modalConsul">Learn More...</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-group">
+          <div class="contact-point">
+            <ion-icon name="mail"></ion-icon>
+            <p>inovasinusantara@techindo.com</p>
+          </div>
+          <div class="contact-point">
+            <ion-icon name="call"></ion-icon>
+            <p>(021) 626 6664</p>
+          </div>
+        </div>
+        <div class="contact-group">
+          <div class="contact-point">
+            <ion-icon name="location"></ion-icon>
+            <p>Jl. Raya Narogong No. 123, Bekasi Utara, Kota Bekasi</p>
+          </div>
+        </div>
+        <form name="messageForm" id="messageForm">
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 PT. Inovasi Techindo Nusantara. All rights reserved.</p>
+    </footer>
+
+    <!-- Modals Layanan (Tersembunyi secara default) -->
+    <div class="modal" id="modalWeb">
+      <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <h2>Web Development</h2>
+        <hr />
+        <div class="yt-vids">
+          <iframe
+            src="https://www.youtube.com/embed/xGmIl7QbBiA"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="yt-desc">
+          <h2>Quick Overview</h2>
+          <hr />
+          <p>
+            Web development is the process of creating and maintaining websites
+            and web applications...
           </p>
         </div>
       </div>
-      <form name="messageForm" id="messageForm" method="post">
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
-        <textarea placeholder="Message"></textarea>
-        <button type="submit" name="submit" id="submit">Send Message</button>
-      </form>
-    </section>
-    <footer>
-      <p>&copy; 2023 PT. Inovasi Techindo Nusantara. All rights reserved.</p>
-    </footer>
-    <script src="js/jquery-3.7.0.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/script.js"></script>
+    </div>
+    <div class="modal" id="modalMobile">
+      <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <h2>Mobile App Development</h2>
+        <hr />
+        <div class="yt-vids">
+          <iframe
+            src="https://www.youtube.com/embed/WvwwL0TwH6U"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="yt-desc">
+          <h2>Quick Overview</h2>
+          <hr />
+          <p>
+            Mobile app development is the process of creating software
+            applications for mobile devices...
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modalConsul">
+      <div class="modal-content">
+        <button class="close-modal">&times;</button>
+        <h2>IT Consulting</h2>
+        <hr />
+        <div class="yt-vids">
+          <iframe
+            src="https://www.youtube.com/embed/gTdDH6T5kaE"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="yt-desc">
+          <h2>Quick Overview</h2>
+          <hr />
+          <p>
+            IT consulting refers to the practice of providing expert advice and
+            assistance to organizations...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Logika Modal yang Disederhanakan ---
+        const openModalTriggers = document.querySelectorAll(
+          "[data-modal-target]"
+        );
+        const closeModalTriggers = document.querySelectorAll(".close-modal");
+
+        // Fungsi untuk membuka modal
+        function openModal(modal) {
+          if (modal == null) return;
+          modal.classList.add("is-visible");
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal(modal) {
+          if (modal == null) return;
+          modal.classList.add("is-closing");
+          // Hentikan pemutaran video YouTube saat modal ditutup
+          const iframe = modal.querySelector("iframe");
+          if (iframe) {
+            iframe.src = iframe.src;
+          }
+          modal.addEventListener(
+            "animationend",
+            () => {
+              modal.classList.remove("is-visible", "is-closing");
+            },
+            { once: true }
+          );
+        }
+
+        // Buka modal yang sesuai saat tombol pemicu diklik
+        openModalTriggers.forEach((button) => {
+          button.addEventListener("click", (e) => {
+            e.preventDefault();
+            const modal = document.getElementById(button.dataset.modalTarget);
+            openModal(modal);
+          });
+        });
+
+        // Tutup modal saat tombol close diklik
+        closeModalTriggers.forEach((button) => {
+          button.addEventListener("click", () => {
+            const modal = button.closest(".modal");
+            closeModal(modal);
+          });
+        });
+
+        // Tutup modal saat mengklik di luar area konten
+        window.addEventListener("click", (event) => {
+          if (event.target.classList.contains("modal")) {
+            closeModal(event.target);
+          }
+        });
+
+        // Tampilkan modal selamat datang setelah beberapa saat
+        setTimeout(() => {
+          const welcomeModal = document.getElementById("welcome-modal");
+          openModal(welcomeModal);
+        }, 1000);
+
+        // Tambahkan event listener untuk tombol baru di modal selamat datang
+        const closeWelcomeButton = document.getElementById(
+          "close-welcome-modal"
+        );
+        if (closeWelcomeButton) {
+          closeWelcomeButton.addEventListener("click", () => {
+            const welcomeModal = document.getElementById("welcome-modal");
+            closeModal(welcomeModal);
+          });
+        }
+
+        // --- Logika Menu Mobile (Hamburger) ---
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("is-active");
+        });
+
+        // --- Smooth Scroll (Tanpa jQuery) - DIPERBAIKI ---
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            // Jangan jalankan skrip ini jika link adalah pemicu modal
+            if (this.hasAttribute("data-modal-target")) {
+              return;
+            }
+
+            const href = this.getAttribute("href");
+
+            // Cek jika href adalah selector ID yang valid (lebih dari sekadar '#')
+            if (href && href.length > 1) {
+              const targetElement = document.querySelector(href);
+              if (targetElement) {
+                e.preventDefault(); // Cegah perilaku default HANYA jika target ada
+                targetElement.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }
+            }
+            // Untuk link seperti href="#" (misal logo), scroll ke atas
+            else if (href === "#") {
+              e.preventDefault();
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // --- Penanganan Pengiriman Formulir ---
+        const contactForm = document.getElementById("messageForm");
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault(); // Mencegah pengiriman formulir default
+          alert("Terima kasih! Pesan Anda telah terkirim.");
+          contactForm.reset(); // Mengosongkan formulir setelah dikirim
+        });
+      });
+    </script>
+
+    <!-- IonIcons -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
